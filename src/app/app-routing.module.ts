@@ -1,20 +1,46 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
+
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  // },
+  // {
+  //   path: 'list',
+  //   loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+  // },
+  { path: 'login', loadChildren: './public/login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './public/register/register.module#RegisterPageModule' },
+  // 
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    path: 'members',
+    canActivate: [AuthGuard],
+    loadChildren: './members/member-routing.module#MemberRoutingModule',
+    data: {
+      role: 'USER'
+    }
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  }
+    path: 'admins',
+    canActivate: [AuthGuard],
+    loadChildren: './admins/admin-routing.module#AdminRoutingModule',
+    data: {
+      role: 'ADMIN'
+    }
+  },
+
+
+  // 
+  // { path: 'dashboard', loadChildren: './members/dashboard/dashboard.module#DashboardPageModule' },
+  // { path: 'dashboard', loadChildren: './admins/dashboard/dashboard.module#DashboardPageModule' }
 ];
 
 @NgModule({
@@ -23,4 +49,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
