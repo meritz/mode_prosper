@@ -1,11 +1,89 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-icon name="ios-list" slot="start" class="menu" routerLink="/admins/menu" color="success"></ion-icon>
-    <ion-title>Insertion des Produits</ion-title>
-      <ion-icon name="log-out" slot="end" class="retour" (click)="signOut()" color="danger"></ion-icon>
+    <ion-title>
+      Ionic Storage CRUD
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-
+ 
 <ion-content>
+  <ion-item>
+    <ion-label position="fixed">Title</ion-label>
+    <ion-input type="text" [(ngModel)]="newItem.title"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-label position="fixed">description</ion-label>
+    <ion-input type="text" [(ngModel)]="newItem.description"></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position="fixed">Images</ion-label>
+    <ion-input type="file" [(ngModel)]="newItem.pictures"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">price</ion-label>
+    <ion-input type="number" [(ngModel)]="newItem.price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">category</ion-label>
+    <ion-input type="text" [(ngModel)]="newItem.category"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">state</ion-label>
+    <ion-input type="text" [(ngModel)]="newItem.state"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">commissions</ion-label>
+    <ion-input type="number" [(ngModel)]="newItem.commissions"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">City</ion-label>
+    <ion-input type="text" [(ngModel)]="newItem.city"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">AverageStar</ion-label>
+    <ion-input type="number" [(ngModel)]="newItem.AverageStar"></ion-input>
+  </ion-item>
+ 
+  <ion-button expand="full" (click)="addItem()">Add Item!</ion-button>
+ 
+  <ion-list #mylist>
+ 
+    <ion-list-header>
+      <ion-label>My Items</ion-label>
+    </ion-list-header>
+ 
+    <ion-item-sliding *ngFor="let item of items">
+ 
+      <ion-item>
+        <ion-label text-wrap>
+          <h3>{{ item.title }}</h3>
+          <ion-text>
+            <p>{{ item.description }}</p>
+            <p>{{ item.price }}</p>
+            <p>{{ item.category }}</p>
+            <p>{{ item.state }}</p>
+            <p>{{ item.commissions }}</p>
+            <p>{{ item.averageStar }}</p>
+            <p>{{ item.pictures }}</p>
+          </ion-text>
+          <p>{{ item.modified | date:'short'}}</p>
+        </ion-label>
+      </ion-item>
+ 
+      <ion-item-options side="end">
+        <ion-item-option color="secondary" (click)="updateItem(item)">Update</ion-item-option>
+        <ion-item-option color="danger" (click)="deleteItem(item)">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+ 
+  </ion-list>
+ 
 </ion-content>

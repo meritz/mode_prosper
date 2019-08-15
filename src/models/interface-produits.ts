@@ -4,11 +4,11 @@ export interface Product {
     title: string;
     description: string;
     pictures: string[];
-    id: string;
+    id: number;
     price: number;
     category: Category;
     state: string;
-    createdAt: Date;
+    createdAt: number;
     commissions: number;
     availability: Availability;
     city: string;
