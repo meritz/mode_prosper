@@ -1,21 +1,46 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Connectez vous</ion-title>
+    <ion-title>Connectez-vous alors</ion-title>
   </ion-toolbar>
 </ion-header>
- 
+
 <ion-content padding>
- 
-  <ion-item>
-    <ion-label position="stacked">Email</ion-label>
-    <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>
-  </ion-item>
- 
-  <ion-item>
-    <ion-label position="stacked">Password</ion-label>
-    <ion-input type="password" placeholder="Password" [(ngModel)]="user.pw"></ion-input>
-  </ion-item>
- 
-  <ion-button expand="block" (click)="signIn()">Login</ion-button>
- 
+ <ion-grid>
+   <ion-row>
+     <ion-col size=12 size-md>
+       <ion-img src="../../assets/imgs/evendeur/evendeur.jpg"></ion-img>
+     </ion-col>
+     <ion-col size=12 size-md>
+       <ion-list>
+      <ion-item>
+        <ion-label class="label" position="floating">
+          <ion-icon name="mail"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="label" position="floating">
+          <ion-icon name="key"></ion-icon>
+          Mot de Passe
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="user.pw"></ion-input>
+      </ion-item>
+
+      </ion-list>
+      <br/>
+      <ion-button expand="block" (click)="signIn()" color="success">Connexion</ion-button>
+  </ion-col>
+  </ion-row>
+ </ion-grid>
+ <ion-grid class="demande">
+   <ion-row>
+     <ion-col>
+       <ion-icon name="finger-print"></ion-icon>
+       &nbsp;
+       <a routerLink="/demande" class="lien">Soumettre une demande</a>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
 </ion-content>

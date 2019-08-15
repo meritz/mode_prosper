@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Selectionner son pays</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-grid>
+   <ion-row>
+     <ion-col size="12" size-md>
+       <ion-img src="../../assets/imgs/evendeur/evendeur.jpg"></ion-img>
+     </ion-col>
+     <ion-col size="12" size-md>
+     </ion-col>
+     <ion-col size="12" size-md>
+       
+       <ion-list>
+      <ion-item>
+        <ion-label class="label" position="floating">CHOISIR PAYS</ion-label>
+        <ion-select value="brown" okText="Choisir" cancelText="Annuler" [(ngModel)]="pays">
+          <ion-select-option value="(229) BENIN">BENIN</ion-select-option>
+          <ion-select-option value="(212) BURKINA-FASO">BURKINA-FASO</ion-select-option>
+          <ion-select-option value="(265) CAMEROUN">CAMEROUN</ion-select-option>
+          <ion-select-option value="(225) CÔTE D'IVOIR">CÔTE D'IVOIR</ion-select-option>
+          <ion-select-option value="(233) GHANA">GHANA</ion-select-option>
+          <ion-select-option value="(248) GABON">GABON</ion-select-option>
+          <ion-select-option value="(258) NIGER">NIGER</ion-select-option>
+          <ion-select-option value="(228) TOGO">TOGO</ion-select-option>
+        </ion-select>
+      </ion-item>
+      </ion-list>
+      <br/>
+      <ion-button expand="block" type="submit" (click)="accueil()" color="danger">Valider</ion-button>
+    
+  </ion-col>
+  </ion-row>
+ </ion-grid>
+</ion-content>
+<ion-footer>
+<ion-grid>
+<ion-row>
+<ion-col>
+copyright 2019 | Tous droits réservés - Partenaire GIRAAFF-TOGO
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-footer>

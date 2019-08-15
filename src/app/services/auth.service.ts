@@ -38,9 +38,9 @@ export class AuthService {
     let pw = credentials.pw;
     let user = null;
 
-    if (email === 'admin' && pw === 'admin') {
+    if (email === '1' && pw === '1') {
       user = { email, role: 'ADMIN' };
-    } else if (email === 'user' && pw === 'user') {
+    } else if (email === 'livreur@evendeur.com' && pw === 'livreurevendeur') {
       user = { email, role: 'USER' };
     }
 

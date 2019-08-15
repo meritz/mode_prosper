@@ -1,12 +1,14 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>list-produits</ion-title>
+  <ion-toolbar color="primary">
+    <ion-icon name="ios-list" slot="start" class="menu" routerLink="/admins/menu" color="success"></ion-icon>
+    <ion-title>Nos Produits</ion-title>
+      <ion-icon name="log-out" slot="end" class="retour" (click)="signOut()" color="danger"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let produit of ProduitsListe" (click)="showDetails(produit)">
+    <ion-item *ngFor="let produit of ProduitsListe">
       <ion-thumbnail item-start>
           <img src = {{produit.pictures[0]}} >
       </ion-thumbnail>
@@ -17,7 +19,7 @@
           </ion-text>
           <p>{{produit.description}}</p>
           <ion-text>
-            <p>{{produit.price | currency }}
+            <p>PRIX: {{produit.price}} Fcfa / COMMIS: {{produit.commissions}} Fcfa
           </ion-text>
           <p>
             <span *ngIf="produit.averageStar >=1">
@@ -37,18 +39,8 @@
             </span>
           </p>
       </ion-label>
-      <!-- <ion-button fill="outline" slot="end">View</ion-button> -->
+      <ion-icon name="eye" fill="outline" slot="end" color="success" (click)="showDetails(produit)"></ion-icon>
     </ion-item>
   </ion-list>
-  
+
   </ion-content>
-  <ion-footer>
-  <ion-row>
-  <ion-col>
-   <ion-button expand="block" shape="round">
-     <ion-icon name="camera"></ion-icon>&nbsp;&nbsp;
-     vendre vos biens
-   </ion-button>
-  </ion-col>
-  </ion-row>
-  </ion-footer>

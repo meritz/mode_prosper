@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card no-padding *ngFor="let items of cartItems" lines="inset" >
+    <ion-card-content no-padding>
+      <ion-row no-padding>
+        <ion-col size="6">
+          <!-- <img src={{items.item.menutImage}}> -->
+          <img [src] = "items.item.pictures[0]" >
+        </ion-col>
+        <ion-col size="6">
+          <ion-text>
+            <h3>{{ items.item.title }}</h3>
+          </ion-text>
+          <ion-text>
+            {{ items.qty }}x {{ items.item.price | currency:'XOF':'symbol' }}
+          </ion-text>
+          <ion-button  color="danger" >
+              <ion-icon name="remove-circle"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-badge class="badgeliem" color="danger">{{ (items.item.price * items.qty) | currency:'XOF':'symbol' }}</ion-badge>
+    
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-item-group>
+    <ion-item-divider color="primary">
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>PRIX</ion-label>
+      Total: <span slot="end">{{ total | currency:'XOF':'symbol' }}</span>
+    </ion-item>
+    <ion-item>
+      <ion-label>FRAIS</ion-label>
+      <h4>600</h4>
+    </ion-item>
+  </ion-item-group>
+
+
+</ion-content>
+<ion-footer>
+  <ion-button shape="round" expand="block" >CONFIRMER
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TOTAL:&nbsp;&nbsp; <span slot="end">{{ total | currency:'XOF':'symbol' }}</span>
+  </ion-button>
+</ion-footer>

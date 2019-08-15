@@ -12,7 +12,10 @@ const routes: Routes = [
   { path: 'list-admins', loadChildren: './list-admins/list-admins.module#ListAdminsPageModule' },
   { path: 'add-categorie', loadChildren: './add-categorie/add-categorie.module#AddCategoriePageModule' },
   { path: 'statistique', loadChildren: './statistique/statistique.module#StatistiquePageModule' },
-  { path: 'etat-ventes', loadChildren: './etat-ventes/etat-ventes.module#EtatVentesPageModule' }
+  { path: 'etat-ventes', loadChildren: './etat-ventes/etat-ventes.module#EtatVentesPageModule' },
+  { path: 'menu', loadChildren: './menu/menu.module#MenuPageModule' },
+  { path: 'details', loadChildren: './details/details.module#DetailsPageModule' },
+  { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' }
 ];
 
 @NgModule({

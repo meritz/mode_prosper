@@ -6,7 +6,7 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'accueil',
     pathMatch: 'full'
   },
   // {
@@ -17,9 +17,10 @@ const routes: Routes = [
   //   path: 'list',
   //   loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
   // },
+  { path: 'accueil', loadChildren: './public/accueil/accueil.module#AccueilPageModule' },
   { path: 'login', loadChildren: './public/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './public/register/register.module#RegisterPageModule' },
-  // 
+  //
   {
     path: 'members',
     canActivate: [AuthGuard],
@@ -36,9 +37,9 @@ const routes: Routes = [
       role: 'ADMIN'
     }
   },
+  { path: 'demande', loadChildren: './public/demande/demande.module#DemandePageModule' },
 
-
-  // 
+  //
   // { path: 'dashboard', loadChildren: './members/dashboard/dashboard.module#DashboardPageModule' },
   // { path: 'dashboard', loadChildren: './admins/dashboard/dashboard.module#DashboardPageModule' }
 ];

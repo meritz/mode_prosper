@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Votre demande sera étudier en 24h </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" class="photo">
+      <ion-icon name="contact" class="icone"></ion-icon>
+      &nbsp;&nbsp;
+      <ion-icon name="cloud" class="icone2"></ion-icon>
+    </ion-col>
+    <ion-col size="12">
+          <ion-item>
+            Formulaire de souscription
+          </ion-item>
+          <ion-list>
+            <ion-item>
+                <ion-label position="floating">Pays selectionné</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            <ion-item>
+                <ion-label position="floating">Nom</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Prénoms</ion-label>
+                <ion-input type="email" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">E-mail</ion-label>
+                <ion-input type="email" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Contact</ion-label>
+                <ion-input type="text" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Contact personne resource</ion-label>
+                <ion-input type="text" ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Adresse</ion-label>
+                <ion-textarea type="text" ></ion-textarea>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Choisir son niveau</ion-label>
+                <ion-select value="brown" okText="Envoyer" cancelText="Annuler">
+                  <ion-select-option value="ADMIN">Administrateur</ion-select-option>
+                  <ion-select-option value="EVENDEUR">E-Vendeur</ion-select-option>
+                  <ion-select-option value="Comptable">Gestionnaire</ion-select-option>
+                  <ion-select-option value="LIVREUR">Livreur</ion-select-option>
+                </ion-select>
+              </ion-item>
+          </ion-list>
+          <ion-button color="success" (click)="soumettre()">
+            Soumettre
+          </ion-button>
+        <br/>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      Vos données de connexion vous seront envoyées depuis votre compte email mentioné
+      un peu plus haut dans environs 24 heures; le temps que votre demande puisse
+      être étudiée, validée puis prise en compte. Merci de choisir faire équipe avec nous
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

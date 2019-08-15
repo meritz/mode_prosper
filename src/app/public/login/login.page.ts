@@ -14,7 +14,10 @@ export class LoginPage implements OnInit {
     pw: ''
   };
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -25,7 +28,7 @@ export class LoginPage implements OnInit {
       if (role == 'USER') {
         this.router.navigate(['members', 'dashboard']);
       } else if (role == 'ADMIN') {
-        this.router.navigate(['admins', 'dashboard-admin']);
+        this.router.navigate(['admins', 'menu']);
       }
     });
   }
